@@ -8,6 +8,13 @@
       "when": 1788718518136,
       "tag": "0000_social_core",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1788718542640,
+      "tag": "0001_media_storage_policies",
+      "breakpoints": true
     }
   ]
 }
