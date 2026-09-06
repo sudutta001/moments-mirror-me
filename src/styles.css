@@ -132,6 +132,70 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+:root {
+  --win-face: oklch(0.82 0 0);
+  --win-face-light: oklch(1 0 0);
+  --win-face-dark: oklch(0.55 0 0);
+  --win-face-darker: oklch(0.28 0 0);
+  --win-title: oklch(0.32 0.14 265);
+  --win-title-2: oklch(0.5 0.16 265);
+  --win-title-fg: oklch(1 0 0);
+  --win-ink: oklch(0.12 0 0);
+  --font-win: "MS Sans Serif", "Tahoma", "Geneva", "Segoe UI", sans-serif;
+}
+
+@theme inline {
+  --color-win-face: var(--win-face);
+  --color-win-ink: var(--win-ink);
+  --color-win-title-fg: var(--win-title-fg);
+  --font-win: var(--font-win);
+}
+
+@utility win-out {
+  border-top: 2px solid var(--win-face-light);
+  border-left: 2px solid var(--win-face-light);
+  border-right: 2px solid var(--win-face-darker);
+  border-bottom: 2px solid var(--win-face-darker);
+  box-shadow:
+    inset -1px -1px 0 0 var(--win-face-dark),
+    inset 1px 1px 0 0 var(--win-face);
+  background: var(--win-face);
+}
+
+@utility win-in {
+  border-top: 2px solid var(--win-face-darker);
+  border-left: 2px solid var(--win-face-darker);
+  border-right: 2px solid var(--win-face-light);
+  border-bottom: 2px solid var(--win-face-light);
+  box-shadow: inset 1px 1px 0 0 var(--win-face-dark);
+  background: var(--win-face-light);
+}
+
+@utility win-btn {
+  border-top: 2px solid var(--win-face-light);
+  border-left: 2px solid var(--win-face-light);
+  border-right: 2px solid var(--win-face-darker);
+  border-bottom: 2px solid var(--win-face-darker);
+  background: var(--win-face);
+  color: var(--win-ink);
+  font-family: var(--font-win);
+  &:active {
+    border-top-color: var(--win-face-darker);
+    border-left-color: var(--win-face-darker);
+    border-right-color: var(--win-face-light);
+    border-bottom-color: var(--win-face-light);
+  }
+}
+
+@utility win-titlebar {
+  background: linear-gradient(90deg, var(--win-title), var(--win-title-2));
+  color: var(--win-title-fg);
+}
+
+@utility pixelated {
+  image-rendering: pixelated;
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -142,3 +206,4 @@
     color: var(--color-foreground);
   }
 }
+
